@@ -1,0 +1,129 @@
+:root{
+    --primary-color: #ee4d2d;
+    --primary-color-rgba: rgb(238, 77, 45);
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height))
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ANOMATION */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from{
+        transform: scale(var(--growth-from));
+    } to{
+        transform: scale(var(--growth-to));
+    } 
+}
+
+/* MODAL */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.modal__body{
+    width: 600px;
+    --growth-from: 0.7;
+    --growth-to: 1;
+    background-color: #fff;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+.modal__inner{
+
+}
+
+/* button style */
+.btn{
+    width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0 12px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.btn--normal:hover{
+    background-color: #ccc;
+}
+
+.btn.btn--primary{
+    background-color: #ee4d2d;
+    color: #fff;
+}
+
+/* nut bi vo hieu hoa khi dua code cho BE xu ly se su dung css nay*/
+.btn.btn--disabled{
+    background-color: #ee4d2d;
+    color: #fff;
+    filter: brightness(80%)
+}
+
+.btn.btn--size-s{
+    width: 200px;
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
